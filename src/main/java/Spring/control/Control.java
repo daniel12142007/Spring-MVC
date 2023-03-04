@@ -28,6 +28,8 @@ public class Control {
         list.add(new User(9, "Kurmanbek", 15));
         list.add(new User(10, "Aiken", 17));
         list.add(new User(11, "Bekbolsun", 15));
+        list.add(new User(12, "Bilal", 18));
+        list.add(new User(13, "Elmirbek", 17));
     }
 
     @GetMapping("/")

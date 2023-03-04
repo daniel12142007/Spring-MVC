@@ -12,9 +12,9 @@
     <title>Title</title>
 </head>
 <body>
-<table border="2px">
+<table border="2px" align="center" style="color: red;width:550px">
     <thead>
-    <tr>
+    <tr style="text-align: start">
         <th>id</th>
         <th>name</th>
         <th>age</th>
@@ -23,23 +23,29 @@
     </thead>
     <tbody>
     <c:forEach items="${tnt}" var="table">
-        <tr>
+        <tr style="text-align: start">
             <td>${table.id}</td>
-            <td>
+            <td style="text-align: start">
                 <a href="/get/${table.id}">
                         ${table.name}
                 </a>
             </td>
             <td>${table.age}</td>
-            <td>
-                <form action="/delete/by/${table.id}" method="get">
-                    <button type="submit">delete</button>
+            <td style="text-align: center">
+                <form action="/delete/by/${table.id}" method="get" >
+                    <button style="height: 20px; width: 100px; background-color: black;color: white;border-radius: 5px;margin-top: 7px" type="submit">delete</button>
                 </form>
             </td>
         </tr>
     </c:forEach>
     </tbody>
 </table>
-<h1><a href="studentForm">table</a></h1>
+<style>
+    a {
+    text-decoration: none;
+    color: red;
+    }
+</style>
+<button style="background-color: black; width: 140px;height: 40px; margin-left: 680px;margin-top: 10px" align="center"><a style="color: white;" href="studentForm">register user</a></button>
 </body>
 </html>

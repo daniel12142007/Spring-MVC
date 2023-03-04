@@ -9,11 +9,39 @@
 <html>
 <head>
     <title>Title</title>
+    <style>
+        button {
+            transition-duration: 0.4s;
+
+            padding: 10px;
+
+        }
+
+        button:hover {
+            background-color: black; /* Green */
+            color: white;
+            padding: 10px;
+        }
+        button:active{
+            background-color: white;
+            padding: 10px;
+        }
+        a{
+            color: black;
+        }
+        a:hover{
+            color:white;
+        }
+    </style>
 </head>
 <body>
-<h1>${index.id}</h1>
-<h1>${index.name}</h1>
-<h1>${index.age}</h1>
-<a href="/table">table</a>
+<h1>id:${index.id}</h1>
+<h1>name:${index.name}</h1>
+<h1>age:${index.age}</h1>
+<button>
+    <a href="/">table</a>
+
+</button>
+
 </body>
 </html>
