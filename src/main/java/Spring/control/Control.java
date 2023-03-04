@@ -26,7 +26,7 @@ public class Control {
             new User(11, "Bekbolsun", 15)
     );
 
-    @GetMapping("/table")
+    @GetMapping("/")
     public String table(Model model) {
         model.addAttribute("tnt", list);
         return "table";

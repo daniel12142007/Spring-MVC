@@ -18,14 +18,24 @@
         <th>id</th>
         <th>name</th>
         <th>age</th>
+        <th>delete</th>
     </tr>
     </thead>
     <tbody>
     <c:forEach items="${tnt}" var="table">
         <tr>
             <td>${table.id}</td>
-            <td>${table.name}</td>
+            <td>
+                <a href="/get/${table.id}">
+                        ${table.name}
+                </a>
+            </td>
             <td>${table.age}</td>
+            <td>
+                <form action="/delete/by/${table.id}" method="get">
+                    <button type="submit">delete</button>
+                </form>
+            </td>
         </tr>
     </c:forEach>
     </tbody>
