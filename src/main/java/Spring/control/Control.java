@@ -3,10 +3,7 @@ package Spring.control;
 import Spring.model.User;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -29,7 +26,7 @@ public class Control {
             new User(11, "Bekbolsun", 15)
     );
 
-    @GetMapping("/")
+    @GetMapping("/table")
     public String table(Model model) {
         model.addAttribute("tnt", list);
         return "table";
@@ -42,10 +39,18 @@ public class Control {
         user.setName(name);
         user.setAge(age);
         list.add(user);
-        return "redirect:/table";
+        return "redirect:/";
     }
+
     @GetMapping("studentForm")
-    public String from(){
+    public String from() {
         return "studentform";
+    }
+
+    @GetMapping("/get/{id}")
+    public String getbyid(@PathVariable int id, Model model) {
+        User user = list.get(id - 1);
+        model.addAttribute("index", user);
+        return "getbyid";
     }
 }
