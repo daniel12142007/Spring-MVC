@@ -12,10 +12,8 @@
 </head>
 <body>
 <form action="/save" method="post">
-    <label>Name:</label><br>
-    <input type="text" name="name"><br>
-    <label>Age:</label><br>
-    <input type="number" name="age"><br>
+    <label>Name:</label><input type="text" name="name">
+    <label>Age:</label><input type="text" name="age">
     <input type="submit" value="registr">
 </form>
 </body>
