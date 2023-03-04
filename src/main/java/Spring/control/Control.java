@@ -28,7 +28,7 @@ public class Control {
 
     @GetMapping
     public String table(Model model) {
-        model.addAttribute("table", list);
+        model.addAttribute("tnt", list);
         return "table";
     }
 }
