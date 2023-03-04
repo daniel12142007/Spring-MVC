@@ -1,5 +1,6 @@
 package Spring.repository;
 
+import Spring.configuration.Myconfic;
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
 
 public class Repository extends AbstractAnnotationConfigDispatcherServletInitializer {
@@ -8,10 +9,10 @@ public class Repository extends AbstractAnnotationConfigDispatcherServletInitial
     }
 
     protected Class<?>[] getServletConfigClasses() {
-        return new Class[0];
+        return new Class[]{Myconfic.class};
     }
 
     protected String[] getServletMappings() {
-        return new String[0];
+        return new String[]{"/"};
     }
 }

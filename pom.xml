@@ -4,10 +4,19 @@
     <groupId>it.kg</groupId>
     <artifactId>SpringMVC</artifactId>
     <packaging>war</packaging>
+    <properties>
+        <maven.compiler.source>19</maven.compiler.source>
+        <maven.compiler.target>19</maven.compiler.target>
+    </properties>
     <version>1.0-SNAPSHOT</version>
     <name>SpringMVC Maven Webapp</name>
     <url>http://maven.apache.org</url>
     <dependencies>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-core</artifactId>
+            <version>5.3.25</version>
+        </dependency>
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
