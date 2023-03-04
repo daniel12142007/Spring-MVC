@@ -49,8 +49,23 @@ public class Control {
 
     @GetMapping("/get/{id}")
     public String getbyid(@PathVariable int id, Model model) {
-        User user = list.get(id - 1);
-        model.addAttribute("index", user);
+        for (int i = 0; i <= list.size(); i++) {
+            if (list.get(i).getId() == id) {
+                model.addAttribute("index", list.get(i));
+                break;
+            }
+        }
         return "getbyid";
+    }
+
+    @GetMapping("delete/by/{id}")
+    public String deletebyid(@PathVariable int id) {
+        for (int i = 0; i <= list.size(); i++) {
+            if (list.get(i).getId() == id) {
+                list.remove(i);
+                break;
+            }
+        }
+        return "redirect:/";
     }
 }
