@@ -4,6 +4,9 @@ import Spring.model.User;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.List;
 
@@ -26,9 +29,23 @@ public class Control {
             new User(11, "Bekbolsun", 15)
     );
 
-    @GetMapping
+    @GetMapping("/")
     public String table(Model model) {
         model.addAttribute("tnt", list);
         return "table";
+    }
+
+    @PostMapping("/save")
+    private String savestudent(@RequestParam String name, @RequestParam int age) {
+        User user = new User();
+        user.setId(list.size() + 1);
+        user.setName(name);
+        user.setAge(age);
+        list.add(user);
+        return "redirect:/table";
+    }
+    @GetMapping("studentForm")
+    public String from(){
+        return "studentform";
     }
 }

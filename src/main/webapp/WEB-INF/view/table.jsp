@@ -23,12 +23,13 @@
     <tbody>
     <c:forEach items="${tnt}" var="table">
         <tr>
-<td>${table.id}</td>
-<td>${table.name}</td>
-<td>${table.age}</td>
+            <td>${table.id}</td>
+            <td>${table.name}</td>
+            <td>${table.age}</td>
         </tr>
     </c:forEach>
     </tbody>
 </table>
+<h1><a href="studentForm">table</a></h1>
 </body>
 </html>
